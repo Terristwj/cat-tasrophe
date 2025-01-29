@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cards of Cats</title>
+    </head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header - START */
+        #title-wrapper {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #title {
+            font-size: 2em;
+        }
+
+        #subtitle {
+            font-size: 1.5em;
+        }
+        /* Header - END */
+
+        /* Content - START */
+        #content {
+            margin: 25px auto;
+            width: 80%;
+            padding: 20px;
+
+            border: 1px solid black;
+            border-radius: 25px;
+            background: white;
+
+            display: grid;
+            gap: 25px;
+        }
+
+        #content > .card {
+            border: 1px solid black;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #cat-image {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid black;
+        }
+
+        #cat-information {
+            padding: 10px 10px;
+        }
+        #cat-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0px 0px 10px 0px;
+        }
+        /* Content - END */
+
+        /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+            #content {
+                grid-template-columns: auto;
+            }
+        }
+
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        @media only screen and (min-width: 600px) {
+            #content {
+                grid-template-columns: auto auto;
+            }
+        }
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 768px) {
+            #content {
+                grid-template-columns: auto auto auto;
+            }
+        }
+
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (min-width: 992px) {
+            #content {
+                grid-template-columns: auto auto auto auto;
+            }
+        }
+
+        /* Extra large devices (large laptops and desktops, 1200px and up) */
+        @media only screen and (min-width: 1200px) {
+            #content {
+                grid-template-columns: auto auto auto auto auto;
+            }
+        }
+
+        #to-homepage {
+            display: block;
+            text-align: center;
+            margin: 20px;
+            font-size: 1.5em;
+            color: #333;
+        }
+    </style>
+    <body onload="loadCats()">
+        <div id="title-wrapper">
+            <div id="title">Cat-tastrophe</div>
+            <div id="subtitle">The place for cute Cats!</div>
+        </div>
+
+        <!-- Content - START -->
+        <div id="content">
+            <!-- Card Template -->
+            <!-- <div class="card">
+                <img id="cat-image" src="../assets/cat-default.jpg" alt="cat" />
+                <div id="cat-information">
+                    <h1 id="cat-name">Default Cat Name</h1>
+                    <div id="cat-description">Default Cat Description</div>
+                </div>
+            </div> -->
+        </div>
+        <!-- Content - END -->
+
+        <a id="to-homepage" href="../index.html">Back to Homepage</a>
+
+        <script src="../js/data.js"></script>
+        <script>
+            const imgPath = "../assets/";
+            // Load cats data into content cards
+            const content = document.getElementById("content");
+
+            function loadCats() {
+                // Loop through each cat data
+                for (let i = 0; i < cats.length; i++) {
+                    const cat = cats[i];
+
+                    // Create a card
+                    const card = document.createElement("div");
+                    card.className = "card";
+
+                    // Create an image
+                    const img = document.createElement("img");
+                    img.src = imgPath + cat.img;
+                    img.alt = cat.name;
+                    img.id = "cat-image";
+                    card.appendChild(img);
+
+                    // Create cat information
+                    const catInfo = document.createElement("div");
+                    catInfo.id = "cat-information";
+
+                    // Create cat name
+                    const catName = document.createElement("h1");
+                    catName.id = "cat-name";
+                    catName.textContent = cat.name;
+                    catInfo.appendChild(catName);
+
+                    // Create cat description
+                    const catDescription = document.createElement("div");
+                    catDescription.id = "cat-description";
+                    catDescription.textContent = cat.description;
+                    catInfo.appendChild(catDescription);
+
+                    card.appendChild(catInfo);
+
+                    // Append card to cards
+                    content.appendChild(card);
+                }
+            }
+        </script>
+    </body>
+</html>

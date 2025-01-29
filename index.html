@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cat-tastrophe</title>
+
+        <!-- External CSS -->
+        <link rel="stylesheet" href="./css/main.css" />
+        <link rel="stylesheet" href="./css/title.css" />
+        <link rel="stylesheet" href="./css/content.css" />
+    </head>
+    <body onload="loadCats()">
+        <div id="title-wrapper">
+            <div id="title">Cat-tastrophe</div>
+            <div id="subtitle">The place for cute Cats!</div>
+            <a id="down-arrow" href="#content">>></a>
+        </div>
+
+        <!-- Content - START -->
+        <div id="content">
+            <div id="card">
+                <!-- Cat Image -->
+                <img id="cat-image" src="./assets/cat-default.jpg" alt="cat" />
+
+                <!-- Cat info -->
+                <div id="cat-information">
+                    <h1 id="cat-name">Default Cat Name</h1>
+                    <div id="cat-description">Default Cat Description</div>
+                </div>
+
+                <!-- Buttons Control -->
+                <div id="card-footer">
+                    <div id="buttons-wrapper">
+                        <button id="previous-button" onclick="previousCat()">
+                            Previous
+                        </button>
+                        <button id="next-button" onclick="nextCat()">
+                            Next
+                        </button>
+                    </div>
+
+                    <div id="page-number">Page Number</div>
+                </div>
+            </div>
+
+            <!-- Back-to-top -->
+            <div id="back-to-top">
+                <a href="#title-wrapper">Back to top</a>
+            </div>
+
+            <!-- Navigation Demo: List of Cats -->
+            <br />
+            <div id="list-of-cats">
+                <a href="./html/cats.html">View all Cats</a>
+            </div>
+        </div>
+        <!-- Content - END -->
+
+        <script src="./js/data.js"></script>
+        <script src="./js/content.js"></script>
+    </body>
+</html>

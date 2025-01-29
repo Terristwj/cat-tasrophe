@@ -1,0 +1,36 @@
+html {
+    /* Sliding Effect */
+    scroll-behavior: smooth;
+}
+body {
+    background: linear-gradient(
+        180deg,
+        rgba(172, 241, 255, 1) 0%,
+        rgba(238, 255, 252, 1) 100%
+    );
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+/* Highlight */
+::selection {
+    background: rgb(255, 255, 198);
+    color: #0080ff;
+}
+/* scroll-bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
